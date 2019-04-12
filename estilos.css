@@ -105,6 +105,9 @@ header h1 {
 input[type="number"] {
   width: 5em;
 }
+input[type="text"] {
+  width: 15em;
+}
 
 
 
@@ -127,4 +130,7 @@ input[type="number"] {
   line-height: 1em;
   padding: 0.15em;
   border-radius: 0.15em;
+}
+#labelGrafico{
+    display:none;
 }

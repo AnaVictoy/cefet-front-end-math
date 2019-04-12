@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Resolvendo equações</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Freckle+Face">
     <link rel="stylesheet" href="estilos.css">
     <link rel="shortcut icon" href="imgs/icone-funcao.png">
-  </head>
-  <body>
+     
+</head>
+
+<body>
     <header>
-      <img src="imgs/icone-funcao.png" alt="Ícone de função matemática">
-      <h1>Equações</h1></header>
+        <img src="imgs/icone-funcao.png" alt="Ícone de função matemática">
+        <h1>Equações</h1>
+    </header>
     <main class="paper">
-      <h2>Resolvendo equações de 2º grau</h2>
-      <p>Se você tem uma equação na forma
-        <span class="matematica">ax<sup>2</sup> + bx + c</span>, podemos
-        resolvê-la para você!</p>
-      <p>Coloque os valores de <span class="matematica">a</span>,
-        <span class="matematica">b</span> e <span class="matematica">c</span>
-        abaixo e clique no botão "Resolver!"</p>
-      <section id="coeficientes-da-equacao">
-        <label for="coeficiente-a" class="matematica">a: </label>
-        <input id="coeficiente-a" type="number" value="1">
-        <label for="coeficiente-b" class="matematica">b: </label>
-        <input id="coeficiente-b" type="number" value="1">
-        <!-- colocar o coeficiente c e o button aqui -->
-      </section>
-      <section id="resultado">
-        O resultado é:
-        <ul>
-          <li>
-            <span class="matematica">Δ</span>: <input id="resultado-delta" type="number" disabled>
-            <span class="matematica">Δ = b<sup>2</sup> - 4ac</span>
-          </li>
-          <li>
-            <span class="matematica">x<sub>1</sub></span>: <input id="resultado-x1" type="number" disabled>
-            <span class="matematica">x<sub>1</sub> = (-b + √Δ)/2a</span>
-          </li>
-          <li>
-            <span class="matematica">x<sub>2</sub></span>: <input id="resultado-x2" type="number" disabled>
-            <span class="matematica">x<sub>2</sub> = (-b - √Δ)/2a</span>
-          </li>
-        </ul>
-      </section>
+        <h2>Resolvendo equações de 2º grau</h2>
+        <p>Se você tem uma equação na forma
+            <span class="matematica">ax<sup>2</sup> + bx + c</span>, podemos resolvê-la para você!</p>
+        <p>Coloque os valores de <span class="matematica">a</span>,
+            <span class="matematica">b</span> e <span class="matematica">c</span> abaixo e clique no botão "Resolver!"</p>
+        <section id="coeficientes-da-equacao">
+            <label for="coeficiente-a" class="matematica">a: </label>
+            <input id="coeficiente-a" type="number" value="1">
+            <label for="coeficiente-b" class="matematica">b: </label>
+            <input id="coeficiente-b" type="number" value="1">
+            <label for="coeficiente-c" class="matematica">c: </label>
+            <input id="coeficiente-c" type="number" value="1">
+            <button id="botao-resolver">Resolver!</button>
+            
+        </section>
+        <label for="grafico" id="labelGrafico" class="matematica">Grafico:</label>
+        <div id="grafico"></div><!-- por algum motivo nao funciona se colocar em outro lugar -->
+        <section id="resultado">
+            O resultado é:
+            <ul>
+                <li>
+                    <span class="matematica">Quantidade de raizes diferentes</span>: <input id="resultado-raizes-diferentes" type="text" disabled>
+                </li>
+                <li>
+                    <span class="matematica">Δ</span>: <input id="resultado-delta" type="number" disabled>
+                    <span class="matematica">Δ = b<sup>2</sup> - 4ac</span>
+                </li>
+                <li>
+                    <span class="matematica">x<sub>1</sub></span>: <input id="resultado-x1" type="number" disabled>
+                    <span class="matematica">x<sub>1</sub> = (-b + √Δ)/2a</span>
+                </li>
+                <li>
+                    <span class="matematica">x<sub>2</sub></span>: <input id="resultado-x2" type="number" disabled>
+                    <span class="matematica">x<sub>2</sub> = (-b - √Δ)/2a</span>
+                </li>
+                <li>
+                    <span class="matematica">A parabola está virada para</span>: <input id="resultado-diracao-parabola" type="text" disabled>
+                </li>
+                <li>
+                    <span class="matematica">X do vertice</span>: <input id="resultado-xvertice" type="number" disabled>
+                    <span class="matematica">x<sub>v</sub> = -b/2a</span>
+                </li>
+                <li>
+                    <span class="matematica">Y do vertice</span>: <input id="resultado-yvertice" type="number" disabled>
+                    <span class="matematica">y<sub>v</sub> = -√Δ/4a</span>
+                </li>
+            </ul>
+            
+            
+        </section>
+        <div id="plot"></div>
     </main>
-  </body>
+    <script src="https://unpkg.com/mathjs@5.9.0/dist/math.min.js"></script>
+
+  <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
+    <script src="calcula.js"></script>
+</body>
+
 </html>
